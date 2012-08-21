@@ -49,7 +49,7 @@ require(["some"], function(Some) {
 We can use these functions to decorate a single string or array object:
 
 ````javascript
-var myString = Some.String("this is a string");
+var myString = Some.String("A simple wish in the wind is like a bird on the dish.");
 
 var myArray = Some.Array([1, 2, 3, 4, 5 ,6, 7, 8, 9, 10]);
 ````
@@ -57,26 +57,44 @@ var myArray = Some.Array([1, 2, 3, 4, 5 ,6, 7, 8, 9, 10]);
 Now, using those objects we can use some of the new functions:
 
 ````javascript
-var newString = myString.replaceSome();
+// replace 3 occurances of the letter "i" followed by at least two letters
+// with the letter "a"
+var newString = myString.replaceSome(/i(\w{2,})/g, 3, "a$1");
 
-myData.forEach(function(e) {
-	myReservoir.pushSome(e);
+newString => "A simple wash in the wind is like a bard on the dash."
+
+// Calculate the average value of 3 randomly chosen values
+var average = myData.reduceSome(3, function(prev, curr, i) {
+	var diff = curr - prev;
+	return prev + diff / (i + 1);
 });
+
+average => 3.9
 ````
 
-At this point, `myReservoir` will contain example 3 randomly-chosen values from the array `myData`:
+### Advanced Usage
+
+If you want to use these decorations with *all* strings and arrays within your script they can be applied to the `String.prototype` and `Array.prototype` objects:
 
 ````javascript
-myReservoir => [2, 4, 7] // This can be any random subset of myData
+Some.String(String.prototype);
+Some.Array(Array.prototype);
 ````
 
 ## Decorations
 
-### String
+### String([stringToDecorate])
+
+Returns
+`stringToDecorate` if provided otherwise a new `String` with the function below added to it.
 
 #### `replaceSome(regexOrString, numToReplace, functionOrString)`
 
-### Array
+Replaces `numToReplace` number of `regexOrString` matches with `functionOrString`.
+
+##### Parameters
+
+### Array([stringToDecorate])
 
 #### `filterSome(numToEvaluate, callbackFunction, thisArg)`
 
