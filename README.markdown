@@ -64,7 +64,7 @@ var newString = myString.replaceSome(/i(\w{2,})/g, 3, "a$1");
 newString => "A simple wash in the wind is like a bard on the dash."
 
 // Calculate the average value of 3 randomly chosen values
-var average = myData.reduceSome(3, function(prev, curr, i) {
+var average = myArray.reduceSome(3, function(prev, curr, i) {
 	var diff = curr - prev;
 	return prev + diff / (i + 1);
 });
