@@ -11,6 +11,9 @@
 	}(this, function(Reservoir){
 		"use strict";
 		function _Some(targetString) {
+			if(typeof targetString === "undefined") targetString = new String();
+			else if(typeof targetString === "string") targetString = new String(targetString);
+
 			function generateMatchIterator(toMatch, str) {
 				var matchLength = toMatch.length,
 				    currentOffset = -matchLength;
@@ -75,6 +78,8 @@
 				// building the new string as we go
 				return makeSubstitutionsUsingArray(regexOrString, replaceWith, substitutionList, this);
 			};
+
+			return targetString;
 		}
 		return _Some;
 }));

@@ -11,6 +11,8 @@
 	}(this, function (Reservoir) {
 		"use strict";
 		function _Some(targetArray) {
+			if(typeof targetArray === "undefined") targetString = [];
+
 			function getSubsetOfIndexes(numToEvaluate, arr) {
 				var numToEvaluate = Math.floor(numToEvaluate);
 
@@ -216,6 +218,8 @@
 
 				return res;
 			};
+
+			return targetArray;
 		}
 
 		return _Some;
