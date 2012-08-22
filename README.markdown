@@ -83,13 +83,18 @@ Some.Array(Array.prototype);
 
 ## Decorations
 
-### `Some.String([stringToDecorate])`
+There are two decorators included within Some object:
+
+* [Some.String]()
+* [Some.Array]()
+
+### Some.String(`[stringToDecorate]`)
 
 ##### Returns
 
-`stringToDecorate` if provided otherwise a new empty `String` with the function below added to it.
+`stringToDecorate` if provided otherwise a new empty `String` with the following function added to it.
 
-#### replaceSome`(regexp|substr, numToReplace, newSubStr|function)`
+#### String#replaceSome(`regexp|substr, numToReplace, newSubStr|function`)
 
 Replaces `numToReplace` number of `regexp|substr` matches with `newSubStr|function`.
 
@@ -109,13 +114,13 @@ Replaces `numToReplace` number of `regexp|substr` matches with `newSubStr|functi
 
 The new `String` that is the result of performing the requested number of replacements.
 
-### `Some.Array([arrayToDecorate])`
+### Some.Array(`[arrayToDecorate]`)
 
 ##### Returns
 
 `arrayToDecorate` if provided otherwise a new empty `Array` with the function below added to it.
 
-#### `sliceSome(numToReturn[, begin][, end])`
+#### Array#sliceSome(`numToReturn[, begin][, end]`)
 
 Returns a one-level deep copy of a portion of an array.
 
@@ -131,7 +136,7 @@ Returns a one-level deep copy of a portion of an array.
 
 A new `Array` containing a random sample of `numToReturn` elements from `begin` to `end`.
 
-#### `filterSome(numToEvaluate, callback[, thisArg])`
+#### Array#filterSome(`numToEvaluate, callback[, thisArg]`)
 
 Creates a new array with all elements that pass the test implemented by the provided function.
 
@@ -147,7 +152,7 @@ Creates a new array with all elements that pass the test implemented by the prov
 
 A new `Array` containing the values returned from `callback`.
 
-#### `forSome(numToEvaluate, callback[, thisArg])`
+#### Array#forSome(`numToEvaluate, callback[, thisArg]`)
 
 Executes a provided `callback` once per chosen array element.
 
@@ -163,7 +168,7 @@ Executes a provided `callback` once per chosen array element.
 
 Nothing.
 
-#### `everySome(numToEvaluate, callback[, thisArg])`
+#### Array#everySome(`numToEvaluate, callback[, thisArg]`)
 
 Tests whether the chosen elements in the array pass the test implemented by the provided function.
 
@@ -179,7 +184,7 @@ Tests whether the chosen elements in the array pass the test implemented by the 
 
 A boolean. True if all chosen elements of the array passed the test in `callback`. Otherwise, false.
 
-#### `someSome(numToEvaluate, callback[, thisArg])`
+#### Array#someSome(`numToEvaluate, callback[, thisArg]`)
 
 Tests whether some element in the array passes the test implemented by the provided function.
 
@@ -195,7 +200,7 @@ Tests whether some element in the array passes the test implemented by the provi
 
 A boolean. True if any of the chosen elements of the array passed the test in `callback`. Otherwise, false.
 
-#### `reduceSome(numToEvaluate, callback[, initialValue])`
+#### Array#reduceSome(`numToEvaluate, callback[, initialValue]`)
 
 Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value.
 
@@ -214,7 +219,7 @@ Apply a function against an accumulator and each value of the array (from left-t
 `initialValue` Object to use as the first argument to the first call of the callback. 
 
 
-#### `reduceRightSome(numToEvaluate, callback[, initialValue])`
+#### Array#reduceRightSome(`numToEvaluate, callback[, initialValue]`)
 
 Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value.
 
@@ -232,7 +237,7 @@ Apply a function against an accumulator and each value of the array (from right-
 
 `initialValue` Object to use as the first argument to the first call of the callback. 
 
-#### `mapSome(numToEvaluate, callback[, thisArg])`
+#### Array#mapSome(`numToEvaluate, callback[, thisArg]`)
 
 Creates a new array with the results of calling a provided function on every element in this array.
 
@@ -248,7 +253,7 @@ Creates a new array with the results of calling a provided function on every ele
 
 A new `Array` containing the values returned from `callback`.
 
-#### `mapSomeSparse(numToEvaluate, callback[, thisArg])`
+#### Array#mapSomeSparse(`numToEvaluate, callback[, thisArg]`)
 
 Creates a new array with the results of calling a provided function on every element in this array.
 
