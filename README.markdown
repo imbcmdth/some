@@ -23,7 +23,7 @@ var Some = require('some');
 For the *browser*, add the following to your pages:
 
 ````html
-<script src="reservoir.js"></script>
+<script src="reservoir/reservoir.js"></script>
 <script src="some.js"></script>
 ````
 
@@ -36,9 +36,6 @@ require(["some"], function(Some) {
 	// ...
 });
 ````
-
-\* Note the location passed to `require()` depends on where you installed the file `some.js`. The above assumes it resides directly within the main script directory of your project. `Some` also assumes that reservoir library resides in a subdirectory of it's current location named `reservoir`.
-
 
 ## Usage
 
