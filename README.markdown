@@ -83,7 +83,17 @@ Some.Array(Array.prototype);
 There are two decorators included within Some object:
 
 * [Some.String](https://github.com/imbcmdth/some#somestringstringtodecorate)
+** [String#replaceSome](https://github.com/imbcmdth/some#stringreplacesomeregexpsubstr-numtoreplace-newsubstrfunction)
 * [Some.Array](https://github.com/imbcmdth/some#somearrayarraytodecorate)
+** [Array#sliceSome](https://github.com/imbcmdth/some#arrayslicesomenumtoreturn-begin-end)
+** [Array#filterSome](https://github.com/imbcmdth/some#arrayfiltersomenumtoevaluate-callback-thisarg)
+** [Array#forSome](https://github.com/imbcmdth/some#arrayforsomenumtoevaluate-callback-thisarg)
+** [Array#everSome](https://github.com/imbcmdth/some#arrayeverysomenumtoevaluate-callback-thisarg)
+** [Array#someSome](https://github.com/imbcmdth/some#arraysomesomenumtoevaluate-callback-thisarg)
+** [Array#reduceSome](https://github.com/imbcmdth/some#arrayreducesomenumtoevaluate-callback-initialvalue)
+** [Array#reduceRightSome](https://github.com/imbcmdth/some#arrayreducerightsomenumtoevaluate-callback-initialvalue)
+** [Array#mapSome](https://github.com/imbcmdth/some#arraymapsomenumtoevaluate-callback-thisarg)
+** [Array#mapSomeSparse](https://github.com/imbcmdth/some#arraymapsomesparsenumtoevaluate-callback-thisarg)
 
 ### Some.String(`[stringToDecorate]`)
 
