@@ -69,7 +69,7 @@ var average = myData.reduceSome(3, function(prev, curr, i) {
 	return prev + diff / (i + 1);
 });
 
-average => 3.9
+average => 4.333333333333333
 ````
 
 ### Advanced Usage
@@ -85,29 +85,171 @@ Some.Array(Array.prototype);
 
 ### String([stringToDecorate])
 
-Returns
-`stringToDecorate` if provided otherwise a new `String` with the function below added to it.
+##### Returns
 
-#### `replaceSome(regexOrString, numToReplace, functionOrString)`
+`stringToDecorate` if provided otherwise a new empty `String` with the function below added to it.
 
-Replaces `numToReplace` number of `regexOrString` matches with `functionOrString`.
+#### `replaceSome(regexp|substr, numToReplace, newSubStr|function)`
+
+Replaces `numToReplace` number of `regexp|substr` matches with `newSubStr|function`.
 
 ##### Parameters
 
-### Array([stringToDecorate])
+`regexp` A RegExp object. The match is replaced by the return value of parameter #2.
 
-#### `filterSome(numToEvaluate, callbackFunction, thisArg)`
+`substr` A String that is to be replaced by newSubStr.
 
-#### `forSome(numToEvaluate, callbackFunction, thisArg)`
+`numToReplace` A Number. Maximum number of replacements to make.
 
-#### `everySome(numToEvaluate, callbackFunction, thisArg)`
+`newSubStr` The String that replaces the substring received from parameter #1. A number of special replacement patterns are supported; see the "Specifying a string as a parameter" section below.
 
-#### `someSome(numToEvaluate, callbackFunction, thisArg)`
+`function` A function to be invoked to create the new substring (to put in place of the substring received from parameter #1). The arguments supplied to this function are described in the "Specifying a function as a parameter" section below. 
 
-#### `reduceSome(numToEvaluate, callbackFunction, initialValue)`
+##### Returns
 
-#### `reduceRightSome(numToEvaluate, callbackFunction, initialValue)`
+The new `String` that is the result of performing the requested number of replacements.
 
-#### `mapSome(numToEvaluate, callbackFunction, thisArg)`
+### Array([arrayToDecorate])
 
-#### `mapSomeSparse(numToEvaluate, callbackFunction, thisArg)`
+##### Returns
+
+`arrayToDecorate` if provided otherwise a new empty `Array` with the function below added to it.
+
+#### `sliceSome(numToReturn[, begin][, end])`
+
+Returns a one-level deep copy of a portion of an array.
+
+`numToReturn` Number of array elements to randomly select for the new `Array`.
+
+`begin` Zero-based index at which to begin extraction. As a negative index, `begin` indicates an offset from the end of the sequence. `sliceSome(number, -2)` extracts up to number elements starting from the second-to-last element in the sequence. If `begin` is omitted, `sliceSome` extracts from the beginning of the sequence.
+
+`end` Zero-based index at which to end extraction. `sliceSome` extracts up to but not including `end`. `slice(number, 1, 4)` extracts up to number elementts starting from the second element through the fourth element (elements indexed 1, 2, and 3). As a negative index, `end` indicates an offset from the end of the sequence. `sliceSome(number, 2,-1)` extracts up to number elements from the third element through the second-to-last element in the sequence. If `end` is omitted, `sliceSome` extracts to the end of the sequence. 
+
+#### `filterSome(numToEvaluate, callback[, thisArg])`
+
+Creates a new array with all elements that pass the test implemented by the provided function.
+
+##### Parameters
+
+`numToEvaluate` Number of array elements to randomly select for the `callback`.
+
+`callback` Function to test each element of the array.
+
+`thisArg` Object to use as `this` when executing `callback`. 
+
+##### Returns
+
+A new `Array` containing the values returned from `callback`.
+
+#### `forSome(numToEvaluate, callback[, thisArg])`
+
+Executes a provided `callback` once per chosen array element.
+
+##### Parameters
+
+`numToEvaluate` Number of array elements to randomly select for the `callback`.
+
+`callback` Function to execute for each element.
+
+`thisArg` Object to use as `this` when executing `callback`. 
+
+##### Returns
+
+Nothing.
+
+#### `everySome(numToEvaluate, callback[, thisArg])`
+
+Tests whether the chosen elements in the array pass the test implemented by the provided function.
+
+##### Parameters
+
+`numToEvaluate` Number of array elements to randomly select for the `callback`.
+
+`callback` Function to test for each element.
+
+`thisArg` Object to use as `this` when executing `callback`. 
+
+##### Returns
+
+A boolean. True if all chosen elements of the array passed the test in `callback`. Otherwise, false.
+
+#### `someSome(numToEvaluate, callback[, thisArg])`
+
+Tests whether some element in the array passes the test implemented by the provided function.
+
+##### Parameters
+
+`numToEvaluate` Number of array elements to randomly select for the `callback`.
+
+`callback` Function to test for each element.
+
+`thisArg` Object to use as `this` when executing `callback`. 
+
+##### Returns
+
+A boolean. True if any of the chosen elements of the array passed the test in `callback`. Otherwise, false.
+
+#### `reduceSome(numToEvaluate, callback[, initialValue])`
+
+Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value.
+
+##### Parameters
+
+`callback` Function to execute on each value in the array, taking four arguments:
+
+> `previousValue` The value previously returned in the last invocation of the callback, or initialValue, if supplied. (See below.)
+> `currentValue` The current element being processed in the array.
+> `index` The index of the current element being processed in the array.
+> `array` The array reduce was called upon.
+
+`initialValue` Object to use as the first argument to the first call of the callback. 
+
+
+#### `reduceRightSome(numToEvaluate, callback[, initialValue])`
+
+Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value.
+
+##### Parameters
+
+`callback` Function to execute on each value in the array, taking four arguments:
+
+> `previousValue` The value previously returned in the last invocation of the callback, or initialValue, if supplied. (See below.)
+> `currentValue` The current element being processed in the array.
+> `index` The index of the current element being processed in the array.
+> `array` The array reduce was called upon.
+
+`initialValue` Object to use as the first argument to the first call of the callback. 
+
+#### `mapSome(numToEvaluate, callback[, thisArg])`
+
+Creates a new array with the results of calling a provided function on every element in this array.
+
+##### Parameters
+
+`numToEvaluate` Number of array elements to randomly select for the `callback`.
+
+`callback` Function that produces an element of the new Array from an element of the current one.
+
+`thisArg` Object to use as `this` when executing `callback`. 
+
+##### Returns
+
+A new `Array` containing the values returned from `callback`.
+
+#### `mapSomeSparse(numToEvaluate, callback[, thisArg])`
+
+Creates a new array with the results of calling a provided function on every element in this array.
+
+**Note** The returned array will have the same length as the original array. All elements except for the chosen subset of elements returned will be undefined.
+
+##### Parameters
+
+`numToEvaluate` Number of array elements to randomly select for the `callback`.
+
+`callback` Function that produces an element of the new Array from an element of the current one.
+
+`thisArg` Object to use as `this` when executing `callback`. 
+
+##### Returns
+
+A new `Array` containing the values returned from `callback`.
