@@ -119,11 +119,17 @@ The new `String` that is the result of performing the requested number of replac
 
 Returns a one-level deep copy of a portion of an array.
 
+##### Parameters
+
 `numToReturn` Number of array elements to randomly select for the new `Array`.
 
 `begin` Zero-based index at which to begin extraction. As a negative index, `begin` indicates an offset from the end of the sequence. `sliceSome(number, -2)` extracts up to number elements starting from the second-to-last element in the sequence. If `begin` is omitted, `sliceSome` extracts from the beginning of the sequence.
 
 `end` Zero-based index at which to end extraction. `sliceSome` extracts up to but not including `end`. `slice(number, 1, 4)` extracts up to number elementts starting from the second element through the fourth element (elements indexed 1, 2, and 3). As a negative index, `end` indicates an offset from the end of the sequence. `sliceSome(number, 2,-1)` extracts up to number elements from the third element through the second-to-last element in the sequence. If `end` is omitted, `sliceSome` extracts to the end of the sequence. 
+
+##### Returns
+
+A new `Array` containing a random sample of `numToReturn` elements from `begin` to `end`.
 
 #### `filterSome(numToEvaluate, callback[, thisArg])`
 
@@ -198,8 +204,11 @@ Apply a function against an accumulator and each value of the array (from left-t
 `callback` Function to execute on each value in the array, taking four arguments:
 
 > `previousValue` The value previously returned in the last invocation of the callback, or initialValue, if supplied. (See below.)
+>
 > `currentValue` The current element being processed in the array.
+>
 > `index` The index of the current element being processed in the array.
+>
 > `array` The array reduce was called upon.
 
 `initialValue` Object to use as the first argument to the first call of the callback. 
