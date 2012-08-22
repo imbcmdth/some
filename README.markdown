@@ -83,13 +83,13 @@ Some.Array(Array.prototype);
 
 ## Decorations
 
-### String([stringToDecorate])
+### `Some.String([stringToDecorate])`
 
 ##### Returns
 
 `stringToDecorate` if provided otherwise a new empty `String` with the function below added to it.
 
-#### `replaceSome(regexp|substr, numToReplace, newSubStr|function)`
+#### replaceSome`(regexp|substr, numToReplace, newSubStr|function)`
 
 Replaces `numToReplace` number of `regexp|substr` matches with `newSubStr|function`.
 
@@ -109,7 +109,7 @@ Replaces `numToReplace` number of `regexp|substr` matches with `newSubStr|functi
 
 The new `String` that is the result of performing the requested number of replacements.
 
-### Array([arrayToDecorate])
+### `Some.Array([arrayToDecorate])`
 
 ##### Returns
 
