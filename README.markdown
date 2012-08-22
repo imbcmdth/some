@@ -120,7 +120,7 @@ The new `String` that is the result of performing the requested number of replac
 
 ##### Returns
 
-`arrayToDecorate` if provided otherwise a new empty `Array` with the following functionsw added to it:
+`arrayToDecorate` if provided otherwise a new empty `Array` with the following functions added to it:
 
 * [Array#sliceSome](https://github.com/imbcmdth/some#arrayslicesomenumtoreturn-begin-end)
 * [Array#filterSome](https://github.com/imbcmdth/some#arrayfiltersomenumtoevaluate-callback-thisarg)
@@ -140,9 +140,9 @@ Returns a one-level deep copy of a portion of an array.
 
 `numToReturn` Number of array elements to randomly select for the new `Array`.
 
-`begin` Zero-based index at which to begin extraction. As a negative index, `begin` indicates an offset from the end of the sequence. `sliceSome(number, -2)` extracts up to number elements starting from the second-to-last element in the sequence. If `begin` is omitted, `sliceSome` extracts from the beginning of the sequence.
+`begin` Zero-based index at which to begin extraction. As a negative index, `begin` indicates an offset from the end of the sequence. `sliceSome(number, -2)` extracts up to `numToReturn` elements starting from the second-to-last element in the sequence. If `begin` is omitted, `sliceSome` extracts from the beginning of the sequence.
 
-`end` Zero-based index at which to end extraction. `sliceSome` extracts up to but not including `end`. `slice(number, 1, 4)` extracts up to number elementts starting from the second element through the fourth element (elements indexed 1, 2, and 3). As a negative index, `end` indicates an offset from the end of the sequence. `sliceSome(number, 2,-1)` extracts up to number elements from the third element through the second-to-last element in the sequence. If `end` is omitted, `sliceSome` extracts to the end of the sequence. 
+`end` Zero-based index at which to end extraction. `sliceSome` extracts up to but not including `end`. `slice(number, 1, 4)` extracts up to `numToReturn` elements starting from the second element through the fourth element (elements indexed 1, 2, and 3). As a negative index, `end` indicates an offset from the end of the sequence. `sliceSome(number, 2,-1)` extracts up to `numToReturn` elements from the third element through the second-to-last element in the sequence. If `end` is omitted, `sliceSome` extracts to the end of the sequence. 
 
 ##### Returns
 
