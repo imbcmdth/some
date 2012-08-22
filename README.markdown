@@ -27,7 +27,7 @@ For the *browser*, add the following to your pages:
 <script src="some.js"></script>
 ````
 
-### In the browser, using AMD (require.js)\*
+### In the browser, using AMD (require.js)
 
 ...Or using AMD in the browser:
 
