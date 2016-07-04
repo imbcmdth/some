@@ -8,34 +8,34 @@ Built on top of my very cool [reservoir library](http://github.com/imbcmdth/rese
 
 For *Node.js*, use `npm`:
 
-````console
-npm install some
-````
+```console
+npm install some --save-dev
+```
 
 ..then `require` Some:
 
-````javascript
-var Some = require('some');
-````
+```javascript
+import Some from 'some';
+```
 
 ### In the browser, traditional
 
 For the *browser*, add the following to your pages:
 
-````html
+```html
 <script src="reservoir/reservoir.js"></script>
 <script src="some.js"></script>
-````
+```
 
 ### In the browser, using AMD (require.js)
 
 ...Or using AMD in the browser:
 
-````javascript
+```javascript
 require(["some"], function(Some) {
 	// ...
 });
-````
+```
 
 ## Usage
 
@@ -45,38 +45,38 @@ require(["some"], function(Some) {
 
 We can use these functions to decorate a single string or array object:
 
-````javascript
-var myString = Some.String("A simple wish in the wind is like a bird on the dish.");
+```javascript
+const myString = Some.String("A simple wish in the wind is like a bird on the dish.");
 
-var myArray = Some.Array([1, 2, 3, 4, 5 ,6, 7, 8, 9, 10]);
-````
+const myArray = Some.Array([1, 2, 3, 4, 5 ,6, 7, 8, 9, 10]);
+```
 
 Now, using those objects we can use some of the new functions:
 
-````javascript
+```javascript
 // replace 3 occurances of the letter "i" followed by at least two letters
 // with the letter "a"
-var newString = myString.replaceSome(/i(\w{2,})/g, 3, "a$1");
+const newString = myString.replaceSome(/i(\w{2,})/g, 3, "a$1");
 
 newString => "A simple wash in the wind is like a bard on the dash."
 
 // Calculate the average value of 3 randomly chosen values
-var average = myArray.reduceSome(3, function(prev, curr, i) {
+const average = myArray.reduceSome(3, function(prev, curr, i) {
 	var diff = curr - prev;
 	return prev + diff / (i + 1);
 });
 
 average => 4.333333333333333
-````
+```
 
 ### Advanced Usage
 
 If you want to use these decorations with *all* strings and arrays within your script they can be applied to the `String.prototype` and `Array.prototype` objects:
 
-````javascript
+```javascript
 Some.String(String.prototype);
 Some.Array(Array.prototype);
-````
+```
 
 ## Decorations
 
